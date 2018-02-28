@@ -51,10 +51,7 @@ if (ENABLE_EXERCISE_3) {
   it('removes product from basket', () => {
     const app = mount(<App />);
 
-    app.setState({
-      basket: [mockProducts[1]]
-    })
-
+    app.find('.main .product button').first().simulate('click');
     app.find('.product--shopping-cart button').first().simulate('click');
 
     expect(app.find('.main .product button').first().getDOMNode().disabled).toBe(false);
@@ -68,10 +65,8 @@ if(ENABLE_EXERCISE_4) {
 
     expect(app.find('.header__basket').text().match("0")).toBeTruthy();
 
-    app.setState({
-      basket: [mockProducts[1]]
-    });
-
+    app.find('.main .product button').first().simulate('click');
+    
     expect(app.find('.header__basket').text().match("1")).toBeTruthy();
   });
 }
