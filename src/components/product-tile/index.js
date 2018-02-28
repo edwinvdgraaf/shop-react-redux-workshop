@@ -23,7 +23,6 @@ class ProductTile extends Component {
   render() {
     const { imageUrl, price, subTitle, title, inBasket } = this.props;
 
-
     return (
       <div className="product">
         <div className="product__image">
@@ -32,7 +31,7 @@ class ProductTile extends Component {
         <div className="product__party">{ subTitle }</div>
         <div className="product__title">{ title }</div>
         <Price price={price} />
-        <button onClick={this.onClick} disabled={inBasket} >In winkelwagentje</button>
+        <button onClick={this.onClick} disabled={inBasket}>In winkelwagentje</button>
       </div>
     );
   }

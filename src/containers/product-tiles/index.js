@@ -9,10 +9,12 @@ class ProductTiles extends Component {
   render() {
     const { products, addToBasket, basket } = this.props;
 
-    return products.map((p, i) => 
+    return products ? products.map((p, i) => 
       <ProductTile {...p} 
-        addToBasket={addToBasket} inBasket={basket.filter(bp => bp.globalId === p.globalId).length > 0  } key={i} />
-    );
+        key={i}
+        addToBasket={addToBasket} 
+        inBasket={basket.filter(bp => bp.globalId === p.globalId).length > 0 } />
+    ) : <p>Geen producten gevonden</p>;
   }
 }
 
