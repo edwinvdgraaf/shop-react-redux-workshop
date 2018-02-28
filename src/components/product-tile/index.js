@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import Price from '../price';
 
 class ProductTile extends Component {
   constructor() {
     super();
-
 
     this.onClick = this.onClick.bind(this);
   }
@@ -31,7 +31,7 @@ class ProductTile extends Component {
         </div>
         <div className="product__party">{ subTitle }</div>
         <div className="product__title">{ title }</div>
-        <div className="product__price">{price.split(",")[0]},<sup className="product__price product__price--fraction">{price.split(",")[1]}</sup></div>
+        <Price price={price} />
         <button onClick={this.onClick} disabled={inBasket} >In winkelwagentje</button>
       </div>
     );

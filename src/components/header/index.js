@@ -3,8 +3,7 @@ import BasketSvg  from './basket.svg';
 
 class Header extends Component {
   render() {
-    const { basket } = this.props;
-    const productsInBasket = basket.length;
+    const { productsInBasket } = this.props;
 
     return (
       <div className="header">

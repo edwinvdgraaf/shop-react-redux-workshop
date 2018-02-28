@@ -51,7 +51,7 @@ class App extends Component {
 
     return (
       <div className="page-wrapper">
-        <Header basket={basket} />
+        <Header productsInBasket={basket.length} />
         <div className="main">
           <ProductTiles products={products} addToBasket={this.addToBasket} basket={basket} />
         </div>
