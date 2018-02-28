@@ -2,10 +2,10 @@ import { shallow, mount } from 'enzyme';
 import React from 'react';
 import App from './containers/app';
 
-const ENABLE_EXERCISE_1 = false;
-const ENABLE_EXERCISE_2 = false;
-const ENABLE_EXERCISE_3 = false;
-const ENABLE_EXERCISE_4 = false;
+const ENABLE_EXERCISE_1 = true;
+const ENABLE_EXERCISE_2 = true;
+const ENABLE_EXERCISE_3 = true;
+const ENABLE_EXERCISE_4 = true;
 
 import mockProducts from './containers/app/products.json';
 
@@ -17,15 +17,11 @@ if (ENABLE_EXERCISE_1) {
       const [price, fraction] = p.price.split(',');
 
       expect(mount(<App />).contains(
-        <div className="product">
-          <div className="product__image">
-            <img src={ p.imageUrl } alt={ p.title } />
-          </div>
-          <div className="product__party">{ p.subTitle }</div>
           <div className="product__title">{ p.title }</div>
-          <div className="product__price"> { price },<sup className="product__price product__price--fraction">{ fraction }</sup></div>
-          <button>In winkelwagentje</button>
-        </div>
+      )).toBe(true);
+
+      expect(mount(<App />).contains(
+          <div className="product__price">{ price },<sup className="product__price product__price--fraction">{ fraction }</sup></div>
       )).toBe(true);
     });
   });
@@ -56,7 +52,7 @@ if (ENABLE_EXERCISE_3) {
     const app = mount(<App />);
 
     app.setState({
-      basket: [1]
+      basket: [mockProducts[1]]
     })
 
     app.find('.product--shopping-cart button').first().simulate('click');
@@ -73,7 +69,7 @@ if(ENABLE_EXERCISE_4) {
     expect(app.find('.header__basket').text().match("0")).toBeTruthy();
 
     app.setState({
-      basket: [1]
+      basket: [mockProducts[1]]
     });
 
     expect(app.find('.header__basket').text().match("1")).toBeTruthy();
