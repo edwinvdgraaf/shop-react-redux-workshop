@@ -2,6 +2,7 @@ export const SET_INITIAL_PRODUCTS = 'SET_INITIAL_PRODUCTS';
 
 export function productsReducer(state = {}, action) {
   switch (action.type) {
+    // IMPLEMENT EXERCISE 2
     default:
       return state
   }

@@ -31,5 +31,6 @@ ENABLE_EXERCISE_1 = true;`.
     *  Let this container wrap the basket container and connect
     *  Implement this in the `<App />`
     *  Seperate the Header component from the basket button (`src/components/header`), let the header connect with the store and pass the amount of basket products to this button.
+1. By adding changing the way we select the products in the connect, we can easily implement sorting. Decide weither you want to add it to a reducer, or want to keep it local to a certain component (both is fine).
 1. Add product quanity and reflect this in the basket header button
 
